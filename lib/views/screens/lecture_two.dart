@@ -66,6 +66,10 @@ class _LectureTwoState extends State<LectureTwo> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/images/pexels-bychlo-18056645.jpg')
+                        )
                       ),
                     ),
                     Column(
@@ -85,6 +89,11 @@ class _LectureTwoState extends State<LectureTwo> {
                     ),
                   ],
                 ),
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                child: Image.asset('assets/images/pexels-abdel-achkouk-16361788.jpg'),
               ),
               ElevatedButton(
                 onPressed: () {
