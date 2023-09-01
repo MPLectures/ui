@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 
-class LectureTwo extends StatelessWidget {
-  const LectureTwo({super.key});
+class LectureTwo extends StatefulWidget {
+  @override
+  State<LectureTwo> createState() => _LectureTwoState();
+}
+
+class _LectureTwoState extends State<LectureTwo> {
+  Color firstColor = Colors.red;
+
+  Color secondColor = Colors.teal;
+
+  Color thirdColor = Colors.green;
+
+  Color fourthColor = Colors.cyanAccent;
+
+  Color? tempColor;
 
   @override
   Widget build(BuildContext context) {
@@ -9,66 +22,83 @@ class LectureTwo extends StatelessWidget {
       backgroundColor: Colors.yellow,
       body: SafeArea(
         child: Center(
-          child: Container(
-            height: 300,
-            width: 300,
-            decoration: BoxDecoration(
-                color: Colors.transparent,
-                // borderRadius: BorderRadius.all(Radius.circular(20)),
-                border: Border.all(color: Colors.grey, width: 4)),
-            // child: Center(
-            //   child: Container(
-            //     height: 200,
-            //     width: 200,
-            //     decoration: BoxDecoration(
-            //         color: Colors.transparent,
-            //         // borderRadius: BorderRadius.all(Radius.circular(20)),
-            //         border: Border.all(color: Colors.grey, width: 4)),
-            //   ),
-            // ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                height: 300,
+                width: 300,
+                decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    // borderRadius: BorderRadius.all(Radius.circular(20)),
+                    border: Border.all(color: Colors.grey, width: 4)),
+                // child: Center(
+                //   child: Container(
+                //     height: 200,
+                //     width: 200,
+                //     decoration: BoxDecoration(
+                //         color: Colors.transparent,
+                //         // borderRadius: BorderRadius.all(Radius.circular(20)),
+                //         border: Border.all(color: Colors.grey, width: 4)),
+                //   ),
+                // ),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 70,
-                      width: 70,
-                      color: Colors.red,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 70,
+                          width: 70,
+                          color: firstColor,
+                        ),
+                        Container(
+                          height: 70,
+                          width: 70,
+                          color: fourthColor,
+                        ),
+                      ],
                     ),
                     Container(
-                      height: 70,
-                      width: 70,
-                      color: Colors.cyanAccent,
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: 70,
+                          width: 70,
+                          color: secondColor,
+                        ),
+                        Container(
+                          height: 70,
+                          width: 70,
+                          color: thirdColor,
+                        ),
+                      ],
                     ),
                   ],
                 ),
-                Container(
-                  height: 150,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle
-                  ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 70,
-                      width: 70,
-                      color: Colors.teal,
-                    ),
-                    Container(
-                      height: 70,
-                      width: 70,
-                      color: Colors.green,
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    tempColor = firstColor;
+                    firstColor = secondColor;
+                    secondColor = thirdColor;
+                    thirdColor = fourthColor;
+                    fourthColor = tempColor!;
+                  });
+                },
+                child: Text("swap"),
+              )
+            ],
           ),
         ),
         // child: Row(
@@ -107,5 +137,3 @@ class LectureTwo extends StatelessWidget {
     );
   }
 }
-// Single Child & Multi Child Widgets
-// Row & Column
