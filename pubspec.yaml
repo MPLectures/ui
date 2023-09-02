@@ -80,6 +80,15 @@ flutter:
     - family: TiltPrism
       fonts:
         - asset: assets/fonts/TiltPrism-Regular.ttf
+    - family: PoppinsSemiBold
+      fonts:
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+    - family: PoppinsLight
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+    - family: PoppinsRegular
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
 
   #
   # For details regarding fonts from package dependencies,

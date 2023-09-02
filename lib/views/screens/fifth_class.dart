@@ -1,97 +1,76 @@
 import 'package:flutter/material.dart';
 
-class FifthClass extends StatelessWidget {
-  const FifthClass({Key? key}) : super(key: key);
+class FifthClass extends StatefulWidget {
+  @override
+  State<FifthClass> createState() => _FifthClassState();
+}
 
+class _FifthClassState extends State<FifthClass> {
+  String noImage = 'assets/images/noImage.jpg';
+
+  String firstImage = 'assets/images/pexels-abdel-achkouk-16361788.jpg';
+
+  String secondImage = 'assets/images/pexels-bychlo-18056645.jpg';
+
+  String thirdImage = 'assets/images/pexels-seng-lam-ho-8844226.jpg';
+
+  String image= '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade900,
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
+            Container(
+              height: 450,
+              width: 340,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(image),
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-              ],
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      image = firstImage;
+                    });
+                  },
                   child: Text("First"),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
+                  onPressed: () {
+                    setState(() {
+                      image = secondImage;
+                    });
+                  },
+                  child: Text("Second"),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
+                  onPressed: () {
+                    setState(() {
+                      image = thirdImage;
+                    });
+                  },
+                  child: Text("Third"),
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("First"),
-                ),
-              ],
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  image = noImage;
+                });
+              },
+              child: Text('Reset'),
             ),
           ],
         ),

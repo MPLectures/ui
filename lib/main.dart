@@ -3,6 +3,7 @@ import 'package:ui/views/screens/fifth_class.dart';
 import 'package:ui/views/screens/lecture_one.dart';
 import 'package:ui/views/screens/lecture_three.dart';
 import 'package:ui/views/screens/lecture_two.dart';
+import 'package:ui/views/screens/screen_login.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FifthClass(),
+      home: ScreenLogin(),
     );
   }
 }
