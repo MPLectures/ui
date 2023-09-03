@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui/views/screens/expanded_screen.dart';
 import 'package:ui/views/screens/fifth_class.dart';
 import 'package:ui/views/screens/lecture_one.dart';
 import 'package:ui/views/screens/lecture_three.dart';
