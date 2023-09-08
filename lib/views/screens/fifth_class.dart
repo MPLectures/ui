@@ -18,6 +18,7 @@ class _FifthClassState extends State<FifthClass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.grey.shade900,
       body: SafeArea(
         child: Column(
