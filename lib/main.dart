@@ -15,8 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      themeAnimationDuration: Duration(milliseconds: 300),
       debugShowCheckedModeBanner: false,
-      home: Navigation(),
+      home: Navigation(
+      ),
     );
   }
 }

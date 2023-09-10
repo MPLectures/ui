@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/helpers/constants.dart';
+import 'package:ui/views/screens/animation_screen_one.dart';
 import 'package:ui/views/screens/fifth_class.dart';
 import 'package:ui/views/screens/screen_login.dart';
 
@@ -12,7 +13,14 @@ class Navigation extends StatefulWidget {
 
 class _NavigationState extends State<Navigation> {
   TextEditingController _controller = TextEditingController();
-  String result = 'Your text will appear here';
+  String isEven = 'No';
+  String isOdd = 'No';
+  String isPositive = 'No';
+  String isNegative = 'No';
+  String isVowel = 'No';
+  String isConsonant = 'No';
+  String isPrime = 'No';
+  String isComposite = 'No';
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +37,170 @@ class _NavigationState extends State<Navigation> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: 200,
+                      padding: EdgeInsets.only(
+                          top: 20, bottom: 20, left: 20, right: 120),
+                      height: 400,
+                      width: 350,
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Center(
-                        child: Text(
-                          result,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 21,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Vowel:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                              Text(
+                                isVowel,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Consonant:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                              Text(
+                                isConsonant,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Even:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                              Text(
+                                isEven,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Odd:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                              Text(
+                                isOdd,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Prime:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                              Text(
+                                isPrime,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Composite:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                              Text(
+                                isComposite,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Positive:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                              Text(
+                                isPositive,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Negative:",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                              Text(
+                                isNegative,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 21,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(
@@ -71,16 +230,13 @@ class _NavigationState extends State<Navigation> {
                             borderRadius: BorderRadius.circular(25)),
                       ),
                     ),
-                    SizedBox(
-                      height: 30,
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
                           onTap: () {
                             setState(() {
-                              result = "";
+                              _resetValues();
                             });
                           },
                           child: Container(
@@ -101,24 +257,74 @@ class _NavigationState extends State<Navigation> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-                              switch (_controller.text) {
-                                case "a":
-                                case "A":
-                                case "e":
-                                case "E":
-                                case "i":
-                                case "I":
-                                case "o":
-                                case "O":
-                                case "u":
-                                case "U":
-                                  result =
-                                      "Your given character '${_controller.text}' is Vowel";
-                                  break;
-                                default:
-                                  result =
-                                      "Your given character '${_controller.text}' is Consonant";
+                              String inputValue = _controller.text;
+                              try {
+                                int intValue = int.parse(inputValue);
+                                isEven = (intValue % 2 == 0) ? 'Yes' : 'No';
+                                isOdd = (intValue % 2 != 0) ? 'Yes' : 'No';
+                                isPositive = (intValue > 0) ? 'Yes' : 'No';
+                                isNegative = (intValue < 0) ? 'Yes' : 'No';
+                                if (intValue > 1) {
+                                  bool isPrimeNumber = true;
+                                  for (int i = 2; i < intValue; i++) {
+                                    if (intValue % i == 0) {
+                                      isPrimeNumber = false;
+                                      break;
+                                    }
+                                  }
+                                  isPrime = isPrimeNumber ? 'Yes' : 'No';
+                                  isComposite = isPrimeNumber ? 'No' : 'Yes';
+                                } else {
+                                  isPrime = 'No';
+                                  isComposite = 'No';
+                                }
+                              } catch (e) {
+                                String lowerCaseInputValue =
+                                    inputValue.toLowerCase();
+                                isVowel = 'aeiou'.contains(lowerCaseInputValue)
+                                    ? 'Yes'
+                                    : 'No';
+                                isConsonant = isVowel == 'Yes' ? 'No' : 'Yes';
                               }
+                              // String inputValue = _controller.text;
+                              //
+                              // int intValue;
+                              // String resultMessage;
+                              //
+                              // try {
+                              //   intValue = int.parse(inputValue);
+                              //   if (intValue % 2 == 0) {
+                              //     isEven = 'Yes';
+                              //   }
+                              //   if (intValue % 2 != 0) {
+                              //     isOdd = "yes";
+                              //   }
+                              //   if (intValue > 0) {
+                              //     isPositive = "yes";
+                              //   }
+                              //   if (intValue < 0) {
+                              //     isNegative = "yes";
+                              //   }
+                              //
+                              // } catch (e) {
+                              //   resultMessage = inputValue;
+                              //   switch (resultMessage) {
+                              //     case "a":
+                              //     case "A":
+                              //     case "E":
+                              //     case "e":
+                              //     case "i":
+                              //     case "I":
+                              //     case "o":
+                              //     case "O":
+                              //     case "u":
+                              //     case "U":
+                              //       isVowel = 'Yes';
+                              //       break;
+                              //     default:
+                              //       isConsonant = 'Yes';
+                              //   }
+                              // }
                             });
                           },
                           child: Container(
@@ -183,10 +389,42 @@ class _NavigationState extends State<Navigation> {
                   ),
                 ),
               ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return AnimationScreenOne();
+                  }));
+                },
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 30),
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    "Animation Screen",
+                    style: TextStyle(
+                      color: MyColors.whiteColor,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _resetValues() {
+    isEven = 'No';
+    isOdd = 'No';
+    isPositive = 'No';
+    isNegative = 'No';
+    isVowel = 'No';
+    isConsonant = 'No';
+    isPrime = 'No';
+    isComposite = 'No';
   }
 }
