@@ -4,14 +4,16 @@ import 'package:ui/views/screens/animation_screen_one.dart';
 import 'package:ui/views/screens/fifth_class.dart';
 import 'package:ui/views/screens/screen_login.dart';
 
-class Navigation extends StatefulWidget {
-  const Navigation({Key? key}) : super(key: key);
+class NavigationAndWordRecognizer extends StatefulWidget {
+  const NavigationAndWordRecognizer({Key? key}) : super(key: key);
 
   @override
-  State<Navigation> createState() => _NavigationState();
+  State<NavigationAndWordRecognizer> createState() =>
+      _NavigationAndWordRecognizerState();
 }
 
-class _NavigationState extends State<Navigation> {
+class _NavigationAndWordRecognizerState
+    extends State<NavigationAndWordRecognizer> {
   TextEditingController _controller = TextEditingController();
   String isEven = 'No';
   String isOdd = 'No';
@@ -349,9 +351,7 @@ class _NavigationState extends State<Navigation> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ScreenLogin();
-                  }));
+                  Navigator.pushNamed(context, '/LoginScreen');
                 },
                 child: Container(
                   margin: EdgeInsets.only(bottom: 30),
